@@ -1,3 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 
-@import 'tailwindcss';
+:root {
+    --c1: #222831;
+    --c2: #31363F;
+    --c3: #76ABAE;
+    --c4: #EEEEEE;
+}
+
+.bg-1 {
+    background-color: var(--c1);
+}
+
+.bg-2 {
+    background-color: var(--c2);
+}
+
+.bg-3 {
+    background-color: var(--c3);
+}
+
+.bg-4 {
+    background-color: var(--c4);
+}
+
+.text-1 {
+    color: var(--c1);
+}
+
+.text-2 {
+    color: var(--c2);
+}
+
+.text-3 {
+    color: var(--c3);
+}
+
+.text-4 {
+    color: var(--c4);
+}
