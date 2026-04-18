@@ -38,3 +38,14 @@
 .text-4 {
     color: var(--c4);
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--c1);
+    color: var(--c4);
+}
+
