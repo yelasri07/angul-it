@@ -39,6 +39,22 @@
     color: var(--c4);
 }
 
+.border-1 {
+    border: 1px solid var(--c1);
+}
+
+.border-2 {
+    border: 1px solid var(--c2);
+}
+
+.border-3 {
+    border: 1px solid var(--c3);
+}
+
+.border-4 {
+    border: 1px solid var(--c4);
+}
+
 * {
     box-sizing: border-box;
 }
