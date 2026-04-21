@@ -5,6 +5,8 @@
         <app-select-images (nextLevel)="handleLevel($event)" />
         } @else if (currentLevel() == 2) {
         <app-calcul (nextLevel)="handleLevel($event)" />
+        } @else if ((currentLevel() == 3)) {
+        <app-text-captcha />
         }
     </div>
 </section>

@@ -1,0 +1,6 @@
+<section>
+    <h2 class="text-3xl">{{ randomText() }}</h2>
+    <form (submit)="onSubmit($event)">
+        <input [formControl]="form" class="bg-4 text-1 mt-10" type="text">
+    </form>
+</section>

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CaptchaStateService {
 
-  private level = 2;
+  private level = 3;
 
   getLevel() {
     return this.level

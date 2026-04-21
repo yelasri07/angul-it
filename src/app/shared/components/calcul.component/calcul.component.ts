@@ -14,15 +14,11 @@ export class CalculComponent implements OnInit {
   firstNumber = signal(0)
   secondNumber = signal(0)
 
-  form = new FormControl(0)
+  form = new FormControl<any>('')
 
   ngOnInit(): void {
     this.firstNumber.set(this.getRandomInt())
     this.secondNumber.set(this.getRandomInt())
-  }
-
-  getRandomInt() {
-    return Math.floor(Math.random() * 10) + 1;
   }
 
   onSubmit() {
@@ -41,5 +37,9 @@ export class CalculComponent implements OnInit {
     }
 
     this.nextLevel.emit(3)
+  }
+
+  private getRandomInt() {
+    return Math.floor(Math.random() * 10) + 1;
   }
 }
