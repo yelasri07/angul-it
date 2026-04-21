@@ -1,6 +1,10 @@
 <section class="flex justify-center items-center flex-col gap-9">
     <h2 class="text-4xl font-semibold">Complete steps</h2>
     <div class="stages border-3 rounded-lg p-7 text-center">
-        <app-select-images />
+        @if (currentLevel() == 1) {
+            <app-select-images (nextLevel)="handleLevel($event)" />
+        } @else if (currentLevel() == 2) {
+            <app-calcul />
+        }
     </div>
 </section>

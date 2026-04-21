@@ -1,16 +1,21 @@
-<section class="grid grid-cols-3 gap-10 p-4 rounded-lg w-full">
-    @for (image of images(); track $index) {
-    <div class="relative aspect-square rounded-md overflow-hidden">
-        <label class="cursor-pointer">
-            <img [src]="'/images/' + image" [alt]="image"
-                class="w-full h-full object-cover transition-transform group-active:scale-95">
+<section>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="images grid grid-cols-3 gap-30 p-4 rounded-lg w-full">
+            @for (image of images(); track $index) {
+            <div class="relative aspect-square rounded-md overflow-hidden">
+                <label class="cursor-pointer">
+                    <img [src]="'/images/' + image" [alt]="image"
+                        class="w-full h-full object-cover transition-transform group-active:scale-95">
 
-            <input type="checkbox" class="peer absolute top-2 right-2 w-5 h-5 accent-[#76ABAE] z-10">
+                    <input formControlName="{{ $index }}" type="checkbox" class="peer absolute top-2 right-2 w-5 h-5 accent-[#76ABAE] z-10">
 
-            <div
-                class="absolute inset-0 border-4 border-transparent peer-checked:border-[#76ABAE] peer-checked:bg-[#76ABAE]/20 transition-all pointer-events-none">
+                    <div
+                        class="absolute inset-0 border-4 border-transparent peer-checked:border-[#76ABAE] peer-checked:bg-[#76ABAE]/20 transition-all pointer-events-none">
+                    </div>
+                </label>
             </div>
-        </label>
-    </div>
-    }
+            }
+        </div>
+        <button class="bg-2 cursor-pointer w-20" type="submit">Next</button>
+    </form>
 </section>
