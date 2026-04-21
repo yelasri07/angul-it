@@ -1,5 +1,6 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, ɵInternalFormsSharedModule } from '@angular/forms';
+import { CaptchaStateService } from '../../services/captcha-state.service';
 
 @Component({
   selector: 'app-text-captcha',
@@ -8,10 +9,10 @@ import { FormControl, ReactiveFormsModule, ɵInternalFormsSharedModule } from '@
   styleUrl: './text-captcha.component.css',
 })
 export class TextCaptchaComponent implements OnInit {
+  private captchaState = inject(CaptchaStateService)
+
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-
   randomText = signal('')
-
   form = new FormControl('')
 
   ngOnInit(): void {
@@ -20,10 +21,14 @@ export class TextCaptchaComponent implements OnInit {
 
   onSubmit(e: Event) {
     e.preventDefault()
-
     let value = this.form.value
 
+    if (value != this.randomText()) {
+      this.form.setErrors({ "error": "invalid text" })
+      return;
+    }
 
+    this.captchaState.setIsStagesDone(true)
   }
 
   private generateRandomText(len: number) {

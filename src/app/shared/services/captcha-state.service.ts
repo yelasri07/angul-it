@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CaptchaStateService {
 
   private level = 3;
+  private isStagesDone = false;
 
   getLevel() {
     return this.level
@@ -13,6 +14,14 @@ export class CaptchaStateService {
 
   setLevel(level: number) {
     this.level = level
+  }
+
+  getIsStagesDone() {
+    return this.isStagesDone
+  }
+
+  setIsStagesDone(value: boolean) {
+    this.isStagesDone = value;
   }
 
 }
