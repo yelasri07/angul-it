@@ -2,9 +2,9 @@
     <h2 class="text-4xl font-semibold">Complete steps</h2>
     <div class="stages border-3 rounded-lg p-7 text-center">
         @if (currentLevel() == 1) {
-            <app-select-images (nextLevel)="handleLevel($event)" />
+        <app-select-images (nextLevel)="handleLevel($event)" />
         } @else if (currentLevel() == 2) {
-            <app-calcul />
+        <app-calcul (nextLevel)="handleLevel($event)" />
         }
     </div>
 </section>
