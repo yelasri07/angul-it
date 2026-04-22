@@ -1,0 +1,27 @@
+.image {
+    /* border-bottom: 7px solid var(--c3); */
+    transition: .1s;
+    border: 6px solid var(--c2);
+}
+
+img {
+    transition: .1s;
+}
+
+label {
+    transition: .1s;
+}
+
+.checked-image {
+    transition: .1s;
+    border: 6px solid var(--c3);
+
+    label {
+        transition: .1s;
+        padding: 0;
+    }
+
+    img {
+        border-radius: 0;
+    }
+}

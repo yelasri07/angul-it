@@ -1,10 +1,10 @@
-import { Component, EventEmitter, inject, input, model, OnInit, Output, signal } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CaptchaStateService } from '../../services/captcha-state.service';
+import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-select-images',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './select-images.component.html',
   styleUrl: './select-images.component.css',
 })
@@ -37,5 +37,9 @@ export class SelectImagesComponent {
     }
 
     this.nextLevel.emit(2)
+  }
+
+  isChecked(index: number) {
+    return this.form.controls[index].value
   }
 }

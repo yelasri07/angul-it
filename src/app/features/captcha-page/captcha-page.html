@@ -1,6 +1,6 @@
 <section class="flex justify-center items-center flex-col gap-9">
     <h2 class="text-4xl font-semibold">Complete steps</h2>
-    <div class="stages border-3 rounded-lg p-7 text-center">
+    <div class="stages bg-1 p-7 text-center shadow-2xl shadow-gray-700 rounded-lg border-2">
         @if (currentLevel() == 1) {
         <app-select-images (nextLevel)="handleLevel($event)" />
         } @else if (currentLevel() == 2) {
