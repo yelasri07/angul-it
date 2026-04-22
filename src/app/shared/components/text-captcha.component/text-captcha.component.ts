@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, ɵInternalFormsSharedModule } from '@angular/forms';
 import { CaptchaStateService } from '../../services/captcha-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-text-captcha',
@@ -10,6 +11,7 @@ import { CaptchaStateService } from '../../services/captcha-state.service';
 })
 export class TextCaptchaComponent implements OnInit {
   private captchaState = inject(CaptchaStateService)
+  private router = inject(Router)
 
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   randomText = signal('')
@@ -29,11 +31,12 @@ export class TextCaptchaComponent implements OnInit {
     }
 
     this.captchaState.setIsStagesDone(true)
+    this.router.navigateByUrl("/result")
   }
 
   private generateRandomText(len: number) {
     let result = '';
-
+ 
     for (let i = 0; i < len; i++) {
       result += this.characters.charAt(Math.random() * this.characters.length)
     }
