@@ -1,5 +1,5 @@
-<section>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<section class="h-full">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col justify-between h-full gap-10">
         <div class="grid grid-cols-3 place-items-center gap-10">
             @for (image of images(); track $index) {
             <div class="image bg-2 shadow-2xl shadow-gray-900 text-center rounded-lg"
@@ -12,6 +12,15 @@
             </div>
             }
         </div>
-        <!-- <button class="bg-2 cursor-pointer w-20" type="submit">Next</button> -->
+        @if (form.invalid) {
+        <div class="bg-red-50 text-sm p-3 rounded-md flex gap-3 border border-red-100 flex-col sm:items-center sm:flex-row dark:bg-red-900/20 dark:border-red-800/40"
+            role="alert">
+            <p class="text-red-900 font-medium dark:text-red-300">Error!</p>
+            <p class="text-red-900 dark:text-red-400">
+                {{ form.getError("error") }}
+            </p>
+        </div>
+        }
+        <app-next-button />
     </form>
 </section>

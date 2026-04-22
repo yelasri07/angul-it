@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
+import { NextButtonComponent } from "../next-button.component/next-button.component";
 
 @Component({
   selector: 'app-select-images',
-  imports: [ReactiveFormsModule, NgClass],
+  imports: [ReactiveFormsModule, NgClass, NextButtonComponent],
   templateUrl: './select-images.component.html',
   styleUrl: './select-images.component.css',
 })
@@ -27,7 +28,7 @@ export class SelectImagesComponent {
     this.form.setErrors(null)
     this.images().forEach((ele, i) => {
       if ((ele.startsWith("cat") && !this.form.controls[i].value) || (!ele.startsWith("cat") && this.form.controls[i].value)) {
-        this.form.setErrors({ "error": "invalid captcha" })
+        this.form.setErrors({ "error": "Please select all images with cats." })
         return;
       }
     })
