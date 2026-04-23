@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { captchaSummary } from '../../core/interfaces/captcha-state.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,29 @@ export class CaptchaStateService {
   setIsStagesDone(value: boolean) {
     this.isStagesDone = value;
     localStorage.setItem("is_stages_done", String(value))
+  }
+
+  getCaptchaSummary() {
+    const data = localStorage.getItem('captcha_summary')
+    if (!data) return null
+
+    try {
+      const captchaSummary = JSON.parse(data)
+      return captchaSummary
+    } catch {
+      return null
+    }
+  }
+
+  setCaptchaSummary(data: captchaSummary) {
+    localStorage.setItem('captcha_summary', JSON.stringify(data))
+  }
+
+  resetCaptchaSummary() {
+    localStorage.setItem('captcha_summary', JSON.stringify(<captchaSummary>{
+      duration: Date.now(),
+      number_of_failed: 0
+    }))
   }
 
 }

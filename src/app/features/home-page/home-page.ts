@@ -13,7 +13,10 @@ export class HomePage {
   private router = inject(Router)
 
   navigateToCaptchaPage(level?: number) {
-    if (level) this.captchaState.setLevel(level)
+    if (level) {
+      this.captchaState.setLevel(level)
+      this.captchaState.resetCaptchaSummary()
+    }
     this.router.navigateByUrl("/captcha")
   }
 }

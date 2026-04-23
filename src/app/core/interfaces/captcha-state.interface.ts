@@ -1,4 +1,4 @@
-export interface captchaState {
-    level: number,
-    isDone: boolean
+export interface captchaSummary  {
+    duration: number,
+    number_of_failed: number
 }

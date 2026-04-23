@@ -7,7 +7,7 @@ export const resultGuard: CanActivateFn = (route, state) => {
   const router = inject(Router)
 
   if (!captchaState.getIsStagesDone()) {
-    router.navigateByUrl("/")
+    router.navigateByUrl("/captcha")
     return false;
   }
 
