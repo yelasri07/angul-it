@@ -13,14 +13,8 @@
             }
         </div>
         @if (form.invalid) {
-        <div class="bg-red-50 text-sm p-3 rounded-md flex gap-3 border border-red-100 flex-col sm:items-center sm:flex-row dark:bg-red-900/20 dark:border-red-800/40"
-            role="alert">
-            <p class="text-red-900 font-medium dark:text-red-300">Error!</p>
-            <p class="text-red-900 dark:text-red-400">
-                {{ form.getError("error") }}
-            </p>
-        </div>
+        <app-error-alert [message]="form.getError('error')" />
         }
-        <app-next-button />
+        <app-navigate-button />
     </form>
 </section>

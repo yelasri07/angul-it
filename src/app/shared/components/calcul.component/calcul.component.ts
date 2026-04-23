@@ -1,9 +1,11 @@
 import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";
+import { ErrorAlertComponent } from "../error-alert.component/error-alert.component";
 
 @Component({
   selector: 'app-calcul',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NavigateButtonComponent, ErrorAlertComponent],
   templateUrl: './calcul.component.html',
   styleUrl: './calcul.component.css',
 })
@@ -21,18 +23,19 @@ export class CalculComponent implements OnInit {
     this.secondNumber.set(this.getRandomInt())
   }
 
-  onSubmit() {
+  onSubmit(e: Event) {
+    e.preventDefault()
     this.form.setErrors(null)
     let number = this.form.value
 
     if (!number || isNaN(number)) {
-      this.form.setErrors({ "error": "invalid number" })
+      this.form.setErrors({ "error": "Please provide a valid number." })
       return
     }
 
     number = parseFloat(number.toString())
     if (number !== (this.firstNumber() + this.secondNumber())) {
-      this.form.setErrors({ "error": "invalid result" })
+      this.form.setErrors({ "error": "Please provide a valid result." })
       return;
     }
 

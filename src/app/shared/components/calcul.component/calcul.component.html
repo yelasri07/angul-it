@@ -1,5 +1,13 @@
 <section>
-    <p>{{ firstNumber() }} + {{ secondNumber() }} = ?</p>
-    <input [formControl]="form" class="bg-4 mt-10 w-20 text-1" type="text">
-    <button (click)="onSubmit()" class="ml-5 cursor-pointer">send</button>
+    <form (submit)="onSubmit($event)" class="h-110 flex flex-col justify-between">
+        <div class="pt-25">
+            <p class="text-5xl mb-5 font-semibold text-3">{{ firstNumber() }} + {{ secondNumber() }} = ?</p>
+            <input autofocus [formControl]="form" class="mt-10 w-70 p-3 bg-2 rounded-lg text-xl outline-none shadow-2xl"
+                type="text">
+        </div>
+        @if (form.invalid) {
+        <app-error-alert [message]="form.getError('error')" />
+        }
+        <app-navigate-button />
+    </form>
 </section>
