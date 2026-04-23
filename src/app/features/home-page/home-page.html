@@ -3,11 +3,11 @@
     <p>interactive multi-stage CAPTCHA web application called Angul-It, designed to test and enhance user validation
         mechanisms through engaging visual and logical challenges</p>
     <div class="flex gap-5">
-        <button (click)="navigateToCaptchaPage()"
+        <button (click)="navigateToCaptchaPage(1)"
             class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
             <span>Start</span>
         </button>
-        <button routerLink="/captcha" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+        <button (click)="navigateToCaptchaPage()" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
             <span>Resume</span>
         </button>
     </div>

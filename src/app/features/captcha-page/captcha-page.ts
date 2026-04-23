@@ -16,6 +16,7 @@ export class CaptchaPage implements OnInit {
 
   ngOnInit(): void {
     this.captchaState.setLevel(this.currentLevel())
+    this.captchaState.setIsStagesDone(false)
   }
 
   handleLevel(level: number) {

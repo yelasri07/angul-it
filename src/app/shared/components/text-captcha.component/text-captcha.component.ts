@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { FormControl, ReactiveFormsModule, ɵInternalFormsSharedModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CaptchaStateService } from '../../services/captcha-state.service';
 import { Router } from '@angular/router';
 import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";

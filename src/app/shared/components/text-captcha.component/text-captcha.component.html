@@ -2,7 +2,7 @@
     <form class="h-110 flex flex-col justify-between" (submit)="onSubmit($event)">
         <div class="pt-25">
             <h2 class="text-5xl mb-5 font-semibold text-3">{{ randomText() }}</h2>
-            <input [formControl]="form" class="mt-10 w-70 p-3 bg-2 rounded-lg text-xl outline-none shadow-2xl"
+            <input autofocus [formControl]="form" class="mt-10 w-70 p-3 bg-2 rounded-lg text-xl outline-none shadow-2xl"
                 type="text">
         </div>
         @if (form.invalid) {

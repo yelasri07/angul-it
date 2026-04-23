@@ -10,12 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ResultPage implements OnInit {
   private captchaState = inject(CaptchaStateService)
-  private router = inject(Router)
 
   ngOnInit(): void {
-    if (!this.captchaState.getIsStagesDone()) {
-      this.router.navigateByUrl("/")
-    }
+    this.captchaState.setLevel(1)
   }
 
 }
