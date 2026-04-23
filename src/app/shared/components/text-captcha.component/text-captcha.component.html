@@ -1,6 +1,13 @@
 <section>
-    <h2 class="text-3xl">{{ randomText() }}</h2>
-    <form (submit)="onSubmit($event)">
-        <input [formControl]="form" class="bg-4 text-1 mt-10" type="text">
+    <form class="h-110 flex flex-col justify-between" (submit)="onSubmit($event)">
+        <div class="pt-25">
+            <h2 class="text-5xl mb-5 font-semibold text-3">{{ randomText() }}</h2>
+            <input [formControl]="form" class="mt-10 w-70 p-3 bg-2 rounded-lg text-xl outline-none shadow-2xl"
+                type="text">
+        </div>
+        @if (form.invalid) {
+        <app-error-alert [message]="form.getError('error')" />
+        }
+        <app-navigate-button />
     </form>
 </section>

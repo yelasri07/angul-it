@@ -2,10 +2,12 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, ɵInternalFormsSharedModule } from '@angular/forms';
 import { CaptchaStateService } from '../../services/captcha-state.service';
 import { Router } from '@angular/router';
+import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";
+import { ErrorAlertComponent } from "../error-alert.component/error-alert.component";
 
 @Component({
   selector: 'app-text-captcha',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NavigateButtonComponent, ErrorAlertComponent],
   templateUrl: './text-captcha.component.html',
   styleUrl: './text-captcha.component.css',
 })
@@ -26,7 +28,7 @@ export class TextCaptchaComponent implements OnInit {
     let value = this.form.value
 
     if (value != this.randomText()) {
-      this.form.setErrors({ "error": "invalid text" })
+      this.form.setErrors({ "error": "Please provide a valid result." })
       return;
     }
 
