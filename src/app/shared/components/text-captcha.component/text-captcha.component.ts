@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CaptchaStateService } from '../../services/captcha-state.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,9 @@ export class TextCaptchaComponent implements OnInit {
   private captchaState = inject(CaptchaStateService)
   private router = inject(Router)
 
+  @Output()
+  nbOfFails = new EventEmitter();
+
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   randomText = signal('')
   form = new FormControl('')
@@ -29,6 +32,7 @@ export class TextCaptchaComponent implements OnInit {
 
     if (value != this.randomText()) {
       this.form.setErrors({ "error": "Please provide a valid result." })
+      this.nbOfFails.emit()
       return;
     }
 

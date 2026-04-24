@@ -2,11 +2,11 @@
     <h2 class="text-4xl font-semibold">Complete the steps</h2>
     <div class="stages bg-1 p-7 text-center shadow-2xl shadow-gray-700 rounded-lg border-2">
         @if (currentLevel() == 1) {
-        <app-select-images (nextLevel)="handleLevel($event)" />
+        <app-select-images (nextLevel)="handleLevel($event)" (nbOfFails)="incrementNbOfFails()" />
         } @else if (currentLevel() == 2) {
-        <app-calcul (nextLevel)="handleLevel($event)" />
+        <app-calcul (nextLevel)="handleLevel($event)" (nbOfFails)="incrementNbOfFails()" />
         } @else if ((currentLevel() == 3)) {
-        <app-text-captcha />
+        <app-text-captcha (nbOfFails)="incrementNbOfFails()" />
         }
     </div>
 </section>

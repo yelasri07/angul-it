@@ -13,6 +13,9 @@ export class CalculComponent implements OnInit {
   @Output()
   nextLevel = new EventEmitter<number>();
 
+  @Output()
+  nbOfFails = new EventEmitter();
+
   firstNumber = signal(0)
   secondNumber = signal(0)
 
@@ -30,12 +33,14 @@ export class CalculComponent implements OnInit {
 
     if (!number || isNaN(number)) {
       this.form.setErrors({ "error": "Please provide a valid number." })
+      this.nbOfFails.emit()
       return
     }
 
     number = parseFloat(number.toString())
     if (number !== (this.firstNumber() + this.secondNumber())) {
       this.form.setErrors({ "error": "Please provide a valid result." })
+      this.nbOfFails.emit()
       return;
     }
 

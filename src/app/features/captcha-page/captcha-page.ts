@@ -26,4 +26,18 @@ export class CaptchaPage implements OnInit {
     this.captchaState.setLevel(level)
     this.currentLevel.set(level)
   }
+
+  incrementNbOfFails() {
+    if (!this.captchaState.getCaptchaSummary()) {
+      this.captchaState.resetCaptchaSummary()
+    }
+
+    const captchaSummary = this.captchaState.getCaptchaSummary()
+    if (captchaSummary && !isNaN(captchaSummary.number_of_failed)) {
+      this.captchaState.setCaptchaSummary({
+        ...captchaSummary!,
+        number_of_failed: captchaSummary?.number_of_failed + 1
+      })
+    }
+  }
 }

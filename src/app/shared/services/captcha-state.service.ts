@@ -13,13 +13,17 @@ export class CaptchaStateService {
     let currentLevel: any = localStorage.getItem("level")
     if (!currentLevel || isNaN(currentLevel)) return this.level
 
-    this.level = parseInt(currentLevel)
+    this.level = parseInt(currentLevel) < 1 || parseInt(currentLevel) > 3 ? 1 : parseInt(currentLevel)
     return this.level
   }
 
   setLevel(level: number) {
-    this.level = level
-    localStorage.setItem("level", level.toString())
+    if (level < 1 || level > 3) {
+      this.level = 1
+    } else {
+      this.level = level
+    }
+    localStorage.setItem("level", this.level.toString())
   }
 
   getIsStagesDone() {

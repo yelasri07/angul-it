@@ -14,6 +14,9 @@ export class SelectImagesComponent {
   @Output()
   nextLevel = new EventEmitter<number>();
 
+  @Output()
+  nbOfFails = new EventEmitter();
+
   images = signal<string[]>(["cat1.avif", "cat2.webp", "cat3.webp", "image1.jpeg", "image2.png", "image3.jpg"])
 
   form = new FormGroup([
@@ -35,6 +38,7 @@ export class SelectImagesComponent {
     })
 
     if (this.form.invalid) {
+      this.nbOfFails.emit()
       return
     }
 
