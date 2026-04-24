@@ -2,10 +2,11 @@ import { AfterViewInit, Component, inject, OnInit, signal } from '@angular/core'
 import { CaptchaStateService } from '../../shared/services/captcha-state.service';
 import confetti from 'canvas-confetti';
 import { TimeFormatPipe } from '../../shared/pipes/time-format-pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-result-page',
-  imports: [TimeFormatPipe],
+  imports: [TimeFormatPipe, RouterLink],
   templateUrl: './result-page.html',
   styleUrl: './result-page.css',
 })

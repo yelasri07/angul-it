@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";
+import { NavigateButtonComponent } from "../navigate-button.component/navigate-button.component";
 import { ErrorAlertComponent } from "../error-alert.component/error-alert.component";
 
 @Component({

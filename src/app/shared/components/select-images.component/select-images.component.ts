@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { ErrorAlertComponent } from "../error-alert.component/error-alert.component";
-import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";
+import { NavigateButtonComponent } from "../navigate-button.component/navigate-button.component";
 
 @Component({
   selector: 'app-select-images',

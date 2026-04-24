@@ -14,4 +14,24 @@
             <p class="text-3">{{ summary()?.duration! | timeFormat: summary()?.end_steps_time! }}</p>
         </div>
     </div>
+    <div class="flex justify-between mt-5">
+        <button routerLink="/" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+            <span class="flex items-center justify-center gap-2">Home <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd"
+                        d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </button>
+        <button routerLink="/captcha" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+            <span class="flex items-center justify-center gap-2">Restart <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd"
+                        d="M7.793 2.232a.75.75 0 0 1-.025 1.06L3.622 7.25h10.003a5.375 5.375 0 0 1 0 10.75H10.75a.75.75 0 0 1 0-1.5h2.875a3.875 3.875 0 0 0 0-7.75H3.622l4.146 3.957a.75.75 0 0 1-1.036 1.085l-5.5-5.25a.75.75 0 0 1 0-1.085l5.5-5.25a.75.75 0 0 1 1.06.025Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </button>
+    </div>
 </section>

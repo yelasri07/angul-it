@@ -2,7 +2,7 @@ import { Component, EventEmitter, inject, OnInit, Output, signal } from '@angula
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CaptchaStateService } from '../../services/captcha-state.service';
 import { Router } from '@angular/router';
-import { NavigateButtonComponent } from "../next-button.component/navigate-button.component";
+import { NavigateButtonComponent } from "../navigate-button.component/navigate-button.component";
 import { ErrorAlertComponent } from "../error-alert.component/error-alert.component";
 
 @Component({
