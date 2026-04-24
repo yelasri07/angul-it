@@ -1,0 +1,7 @@
+.summary > div {
+    transition: .1s;
+}
+
+.summary > div:hover {
+    scale: 1.05;
+}

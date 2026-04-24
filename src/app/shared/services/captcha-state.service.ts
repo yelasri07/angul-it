@@ -35,7 +35,7 @@ export class CaptchaStateService {
     localStorage.setItem("is_stages_done", String(value))
   }
 
-  getCaptchaSummary() {
+  getCaptchaSummary(): captchaSummary | null {
     const data = localStorage.getItem('captcha_summary')
     if (!data) return null
 
@@ -54,7 +54,8 @@ export class CaptchaStateService {
   resetCaptchaSummary() {
     localStorage.setItem('captcha_summary', JSON.stringify(<captchaSummary>{
       duration: Date.now(),
-      number_of_failed: 0
+      number_of_failed: 0,
+      end_steps_time: 0
     }))
   }
 

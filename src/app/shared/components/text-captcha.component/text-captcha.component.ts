@@ -32,13 +32,20 @@ export class TextCaptchaComponent implements OnInit {
       return;
     }
 
+    if (!this.captchaState.getCaptchaSummary()) this.captchaState.resetCaptchaSummary()
+
+    this.captchaState.setCaptchaSummary({
+      ...this.captchaState.getCaptchaSummary()!,
+      end_steps_time: Date.now()
+    })
+
     this.captchaState.setIsStagesDone(true)
     this.router.navigateByUrl("/result")
   }
 
   private generateRandomText(len: number) {
     let result = '';
- 
+
     for (let i = 0; i < len; i++) {
       result += this.characters.charAt(Math.random() * this.characters.length)
     }

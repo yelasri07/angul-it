@@ -1,3 +1,17 @@
-<section>
-    <h2 class="text-4xl">Congratulation!</h2>
+<section class="text-center w-100">
+    <h2 class="text-4xl mb-20">Congratulation!</h2>
+    <div class="summary flex flex-col gap-5 text-lg">
+        <div class="nb-steps bg-1 shadow-2xl border-2 rounded-lg p-4 flex items-center justify-between">
+            <p>Max level: </p>
+            <p class="text-3">3</p>
+        </div>
+        <div class="nb-fails bg-1 shadow-2xl border-2 rounded-lg p-4 flex items-center justify-between">
+            <p>Number of fails: </p>
+            <p class="text-3">{{ summary()?.number_of_failed }}</p>
+        </div>
+        <div class="duration bg-1 shadow-2xl border-2 rounded-lg p-4 flex items-center justify-between">
+            <p>Duration: </p>
+            <p class="text-3">{{ summary()?.duration! | timeFormat: summary()?.end_steps_time! }}</p>
+        </div>
+    </div>
 </section>
