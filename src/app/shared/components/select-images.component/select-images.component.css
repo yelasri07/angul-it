@@ -25,3 +25,7 @@ label {
         border-radius: 0;
     }
 }
+
+.title span {
+    opacity: .7;
+}

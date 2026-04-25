@@ -1,5 +1,5 @@
-<section class="text-center w-100">
-    <h2 class="text-4xl mb-20">Congratulation!</h2>
+<section class="text-center sm:w-100">
+    <h2 class="text-xl sm:text-4xl mb-20">Congratulation!</h2>
     <div class="summary flex flex-col gap-5 text-lg">
         <div class="nb-steps bg-1 shadow-2xl border-2 rounded-lg p-4 flex items-center justify-between">
             <p>Max level </p>
@@ -14,8 +14,8 @@
             <p class="text-3">{{ summary()?.duration! | timeFormat: summary()?.end_steps_time! }}</p>
         </div>
     </div>
-    <div class="flex justify-between mt-5">
-        <button routerLink="/" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+    <div class="flex justify-between mt-5 gap-1">
+        <button routerLink="/" class="sm:w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
             <span class="flex items-center justify-center gap-2">Home <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20" fill="currentColor" class="size-5">
                     <path fill-rule="evenodd"
@@ -24,7 +24,7 @@
                 </svg>
             </span>
         </button>
-        <button routerLink="/captcha" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+        <button routerLink="/captcha" class="sm:w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
             <span class="flex items-center justify-center gap-2">Restart <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20" fill="currentColor" class="size-5">
                     <path fill-rule="evenodd"
