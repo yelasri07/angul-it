@@ -19,15 +19,15 @@ export class ResultPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // const duration = 3000;
+    const duration = 3000;
 
-    // confetti({
-    //   particleCount: 100,
-    //   spread: 160,
-    //   origin: { y: 0.6 },
-    // });
+    confetti({
+      particleCount: 100,
+      spread: 160,
+      origin: { y: 0.6 },
+    });
 
-    // setTimeout(() => confetti.reset(), duration);
+    setTimeout(() => confetti.reset(), duration);
   }
 
 }
