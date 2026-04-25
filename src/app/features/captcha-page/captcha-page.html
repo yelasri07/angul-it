@@ -6,7 +6,7 @@
         } @else if (currentLevel() == 2) {
         <app-calcul (nextLevel)="handleLevel($event)" (nbOfFails)="incrementNbOfFails()" />
         } @else if ((currentLevel() == 3)) {
-        <app-text-captcha (nbOfFails)="incrementNbOfFails()" />
+        <app-text-captcha (nextLevel)="handleLevel($event)" (nbOfFails)="incrementNbOfFails()" />
         }
     </div>
 </section>

@@ -16,6 +16,9 @@ export class TextCaptchaComponent implements OnInit {
   private router = inject(Router)
 
   @Output()
+  nextLevel = new EventEmitter();
+
+  @Output()
   nbOfFails = new EventEmitter();
 
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -45,6 +48,10 @@ export class TextCaptchaComponent implements OnInit {
 
     this.captchaState.setIsStagesDone(true)
     this.router.navigateByUrl("/result")
+  }
+
+  handlePrevious() {
+    this.nextLevel.emit(2)
   }
 
   private generateRandomText(len: number) {

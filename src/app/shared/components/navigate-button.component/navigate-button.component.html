@@ -1,14 +1,16 @@
-<div class="flex justify-around">
-    <button type="button" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
+<div class="flex justify-between mx-20" [ngClass]="{'justify-end': this.currentLevel() == 1}">
+    @if (this.currentLevel() != 1) {
+    <button type="reset" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
         <span class="flex gap-2 justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
             </svg>
             Previous</span>
     </button>
+    }
     <button type="submit" class="w-35 text-4 font-semibold start-btn rounded-md bg-2 cursor-pointer">
-        <span class="flex gap-2 justify-center">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6">
+        <span class="flex gap-2 justify-center">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
             </svg>
         </span>

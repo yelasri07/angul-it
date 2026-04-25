@@ -1,5 +1,5 @@
 <section>
-    <form (submit)="onSubmit($event)" class="h-110 flex flex-col justify-between">
+    <form (submit)="onSubmit($event)" (reset)="handlePrevious()" class="h-110 flex flex-col justify-between">
         <div class="pt-25">
             <p class="text-5xl mb-5 font-semibold text-3">{{ firstNumber() }} + {{ secondNumber() }} = ?</p>
             <input autofocus [formControl]="form" class="mt-10 w-70 p-3 bg-2 rounded-lg text-xl outline-none shadow-2xl"

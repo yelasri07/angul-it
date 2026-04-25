@@ -47,6 +47,10 @@ export class CalculComponent implements OnInit {
     this.nextLevel.emit(3)
   }
 
+  handlePrevious() {
+    this.nextLevel.emit(1)
+  }
+
   private getRandomInt() {
     return Math.floor(Math.random() * 10) + 1;
   }
