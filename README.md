@@ -1,59 +1,86 @@
-# AngulIt
+# Angul-It CAPTCHA App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Angul-It is an interactive multi-stage CAPTCHA web application built with Angular. It challenges users through a series of visual and logical tasks to verify that they are human.
 
-## Development server
+The app focuses on combining user experience with strong validation and security mechanisms.
 
-To start a local development server, run:
+---
 
+## 📌 Overview
+
+This project simulates a modern CAPTCHA system where users must complete multiple stages such as:
+
+- Selecting images  
+- Solving small puzzles  
+
+At the end, users receive a summary of their performance.
+
+---
+
+## ✨ Features
+
+- Multi-stage CAPTCHA challenges  
+- Form validation for each step  
+- Progress tracking with state management  
+- Resume progress after page refresh  
+- Protected navigation between pages  
+- Responsive design (mobile + desktop)  
+- Results summary page  
+- Restart challenge functionality  
+
+---
+
+## 🛠 Tech Stack
+
+- Angular (latest version)  
+- TypeScript  
+- Tailwind CSS  
+- Angular Reactive Forms  
+
+---
+
+## 🧱 Project Structure
+
+- **HomeComponent** → Introduction and start page  
+- **CaptchaComponent** → Main challenge logic and stages  
+- **ResultComponent** → Final results and summary  
+
+---
+
+## ⚙️ How It Works
+
+1. User starts from the Home page  
+2. Completes multiple CAPTCHA stages  
+3. Each stage must be validated before moving forward  
+4. Progress is saved (even after refresh)  
+5. After finishing all stages, results are displayed  
+
+---
+
+## 💾 State Management
+
+The application stores user progress using:
+
+- Angular services  
+- Local storage  
+
+This ensures:
+- No data loss on refresh  
+- Resume from last completed stage  
+
+---
+
+## 🔒 Validation & Security
+
+- Users cannot skip stages  
+- Invalid inputs are blocked  
+- Direct access to the result page is restricted  
+- Users are redirected if they try to bypass the flow  
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install
